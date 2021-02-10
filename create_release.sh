@@ -4,13 +4,14 @@ export VERSION=$1
 export RELEASE_NAME=cma_python
 
 ## Create Release
-   export RELEASE_URL=$(curl -H\
+export RELEASE_URL=$(curl -H\
   "Authorization: token $SECRET_TOKEN"\
    -d "{\"tag_name\": \"$VERSION\", \"target_commitsh\": \"$VERSION\", \"name\": \"$VERSION\", \"body\": \"Release $VERSION\" }"\
    -H "Content-Type: application/json"\
    -X POST\
    https://api.github.com/repos/$GITHUB_REPO/releases |grep \"url\" |grep releases |sed -e 's/.*\(https.*\)\"\,/\1/'| sed -e 's/api/uploads/')
 
+echo "here is ${RELEASE_URL}"
 python createPackage.py
 
 ### Post the release
