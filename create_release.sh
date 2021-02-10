@@ -1,7 +1,7 @@
 #!/bin/bash
 set -ex
 export VERSION=$1
-export RELEASE_NAME=cma_python.zip
+export RELEASE_NAME=cma_python
 
 ## Create Release
    export RELEASE_URL=$(curl -H\
