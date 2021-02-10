@@ -8,3 +8,4 @@ task.zip
 .DS_Store
 .noseids
 cumulus-message-adapter.zip
+dist
